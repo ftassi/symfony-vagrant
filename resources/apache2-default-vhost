@@ -1,0 +1,21 @@
+<VirtualHost *:80>
+    SetEnv FLATCLUB_ENV dev
+    SetEnv FLATCLUB_DEBUG true
+    ServerAdmin webmaster@localhost
+    DocumentRoot /home/vagrant/code/web
+    <Directory />
+            Options FollowSymLinks
+            AllowOverride All
+    </Directory>
+
+    <Directory /vagrant>
+            Options Indexes FollowSymLinks MultiViews
+            AllowOverride All
+            Order allow,deny
+            allow from all
+    </Directory>
+    LogLevel warn
+    #RewriteEngine on 
+    #RewriteLog "/var/log/apache2/rewrite.log"
+    #RewriteLogLevel 3
+</VirtualHost>
